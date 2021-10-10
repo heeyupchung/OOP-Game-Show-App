@@ -6,7 +6,7 @@ class Phrase {
     constructor(phrase) {
         this.phrase = phrase.toLowerCase();
     }
-
+    
     addPhraseToDisplay() {
         for (let i = 0; i < this.phrase.length; i++) {
             let letter = document.createElement('li');
@@ -30,8 +30,8 @@ class Phrase {
     }
 
     showMatchedLetter(letter) {
-        let matchedLetter = document.querySelectorAll('#phrase li');
-        matchedLetter.forEach(letter => {
+        let matchedLetters = document.querySelectorAll('#phrase li');
+        matchedLetters.forEach(matchedLetter => {
             if(letter === matchedLetter.innerHTML){
                 matchedLetter.className = `show`;
             } 

@@ -12,7 +12,7 @@ $('#btn__reset').on('click', e => {
     game.startGame();
     document.querySelectorAll('#qwerty button').forEach(key => {
         key.className = 'key';
-        key.disabled = 'false';
+        key.disabled = false;
     });
 
     heartImg.forEach(heart =>{
@@ -20,7 +20,7 @@ $('#btn__reset').on('click', e => {
     });
 });
 
-$('#qwerty').on('click', e => { 
+$('#qwerty button').on('click', e => { 
     if (e.target.className === 'key') {
         game.handleInteraction(e.target);
     }

@@ -17,7 +17,6 @@ class Game {
 
     startGame() {
         $('#overlay').hide();
-        this.getRandomPhrase();
         this.activePhrase = this.getRandomPhrase();
         this.activePhrase.addPhraseToDisplay();
     }
