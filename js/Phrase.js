@@ -16,32 +16,25 @@ class Phrase {
             } else {
                 letter.className = `hide letter ${this.phrase[i]}`;
             }
-            $('#phrase ul').appendChild('li');
-        }
-        
-        if (this.checkLetter()) {
-            this.showMatchedLetter();
+            $('#phrase ul').append(letter);
         }
     }
 
-    checkLetter() {
-        document.addEventListener('keydown', e => {
-            for (let i = 0; i < this.phrase.length; i++) {
-                if (this.phrase[i] === e.key) {
-                    return true;
-                }
+    checkLetter(letter) {
+        for (let i = 0; i < this.phrase.length; i++) {
+            if (this.phrase[i] === letter) {
+                return true;
             }
-            return false;
-        });
+        }
+        return false;
     }
 
-    showMatchedLetter() {
-        document.addEventListener('keyup', e => {
-            let matchedLetter = document.getElementsByClassName(`${e.key}`);
-            for (let i = 0; i < matchedLetter.length; i++) {
-                matchedLetter[i].classList.remove('hide');
-                matchedLetter[i].classList.add('show');
-            }
+    showMatchedLetter(letter) {
+        let matchedLetter = document.querySelectorAll('#phrase li');
+        matchedLetter.forEach(letter => {
+            if(letter === matchedLetter.innerHTML){
+                matchedLetter.className = `show`;
+            } 
         });
     }
 }
